@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+The style file: plain.bst
+Database file #1: ref.bib
+Warning--there's a number but no volume in Zimmermann1974881
+Warning--empty year in Zimmermann1974881
+You've used 17 entries,
+            2118 wiz_defined-function locations,
+            625 strings with 6856 characters,
+and the built_in function-call counts, 6033 in all, are:
+= -- 581
+> -- 296
+< -- 0
++ -- 118
+- -- 98
+* -- 498
+:= -- 1028
+add.period$ -- 51
+call.type$ -- 17
+change.case$ -- 100
+chr.to.int$ -- 0
+cite$ -- 19
+duplicate$ -- 187
+empty$ -- 460
+format.name$ -- 98
+if$ -- 1227
+int.to.chr$ -- 0
+int.to.str$ -- 17
+missing$ -- 17
+newline$ -- 88
+num.names$ -- 34
+pop$ -- 69
+preamble$ -- 1
+purify$ -- 83
+quote$ -- 0
+skip$ -- 122
+stack$ -- 0
+substring$ -- 477
+swap$ -- 17
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 68
+warning$ -- 2
+while$ -- 53
+width$ -- 19
+write$ -- 188
+(There were 2 warnings)

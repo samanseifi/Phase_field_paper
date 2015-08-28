@@ -1,0 +1,96 @@
+\begin{thebibliography}{10}
+
+\bibitem{Allen19791085}
+Samuel~M. Allen and John~W. Cahn.
+\newblock A microscopic theory for antiphase boundary motion and its
+  application to antiphase domain coarsening.
+\newblock {\em Acta Metallurgica}, 27(6):1085 -- 1095, 1979.
+
+\bibitem{Badalassi2003371}
+V.E. Badalassi, H.D. Ceniceros, and S.~Banerjee.
+\newblock Computation of multiphase systems with phase field models.
+\newblock {\em Journal of Computational Physics}, 190(2):371 -- 397, 2003.
+
+\bibitem{Cahn1971151}
+J.W Cahn and J.E Hilliard.
+\newblock Spinodal decomposition: A reprise.
+\newblock {\em Acta Metallurgica}, 19(2):151 -- 161, 1971.
+
+\bibitem{PhysRevE.66.021607}
+R.~Capovilla, J.~Guven, and J.~A. Santiago.
+\newblock Lipid membranes with an edge.
+\newblock {\em Phys. Rev. E}, 66:021607, Aug 2002.
+
+\bibitem{DeBruin19991213}
+Katherine~A. DeBruin and Wanda Krassowska.
+\newblock Modeling electroporation in a single cell. i. effects of field
+  strength and rest potential.
+\newblock {\em Biophysical Journal}, 77(3):1213 -- 1224, 1999.
+
+\bibitem{deryagin1962theory}
+BV~Deryagin and Yu~V Gutop.
+\newblock Theory of the breakdown (rupture) of free films.
+\newblock {\em Kolloidn. Zh}, 24:370--374, 1962.
+
+\bibitem{Du2004450}
+Qiang Du, Chun Liu, and Xiaoqiang Wang.
+\newblock A phase field approach in the numerical study of the elastic bending
+  energy for vesicle membranes.
+\newblock {\em Journal of Computational Physics}, 198(2):450 -- 468, 2004.
+
+\bibitem{PhysRevE.61.6632}
+R.~Folch, J.~Casademunt, and A.~Hern\'andez-Machado.
+\newblock Viscous fingering in liquid crystals: Anisotropy and morphological
+  transitions.
+\newblock {\em Phys. Rev. E}, 61:6632--6638, Jun 2000.
+
+\bibitem{PhysRevE.68.046310}
+A.~Hern\'andez-Machado, A.~M. Lacasta, E.~Mayoral, and E.~Corvera~Poir\'e.
+\newblock Phase-field model of hele-shaw flows in the high-viscosity contrast
+  regime.
+\newblock {\em Phys. Rev. E}, 68:046310, Oct 2003.
+
+\bibitem{PhysRevLett.87.045501}
+Alain Karma, David~A. Kessler, and Herbert Levine.
+\newblock Phase-field model of mode iii dynamic fracture.
+\newblock {\em Phys. Rev. Lett.}, 87:045501, Jul 2001.
+
+\bibitem{landau1950theory}
+LD~Landau and VL~Ginzburg.
+\newblock On the theory of superconductivity.
+\newblock {\em Journal of Experimental and Theoretical Physics (USSR)},
+  20:1064, 1950.
+
+\bibitem{PhysRevE.79.031926}
+John~S. Lowengrub, Andreas R\"atz, and Axel Voigt.
+\newblock Phase-field modeling of the dynamics of multicomponent vesicles:
+  Spinodal decomposition, coarsening, budding, and fission.
+\newblock {\em Phys. Rev. E}, 79:031926, Mar 2009.
+
+\bibitem{:/content/aip/journal/pof2/23/4/10.1063/1.3567276}
+Jonathan~T. Schwalbe, Petia~M. Vlahovska, and Michael~J. Miksis.
+\newblock Lipid membrane instability driven by capacitive charging.
+\newblock {\em Physics of Fluids (1994-present)}, 23(4):--, 2011.
+
+\bibitem{Steinbach1996135}
+I.~Steinbach, F.~Pezzolla, B.~Nestler, M.~Seebelberg, R.~Prieler, G.J. Schmitz,
+  and J.L.L. Rezende.
+\newblock A phase field concept for multiphase systems.
+\newblock {\em Physica D: Nonlinear Phenomena}, 94(3):135 -- 147, 1996.
+
+\bibitem{PhysRevE.68.061915}
+Z.~C. Tu and Z.~C. Ou-Yang.
+\newblock Lipid membranes with free edges.
+\newblock {\em Phys. Rev. E}, 68:061915, Dec 2003.
+
+\bibitem{Weaver1996135}
+James~C. Weaver and Yu.A. Chizmadzhev.
+\newblock Theory of electroporation: A review.
+\newblock {\em Bioelectrochemistry and Bioenergetics}, 41(2):135 -- 160, 1996.
+
+\bibitem{Zimmermann1974881}
+U.~Zimmermann, G.~Pilwat, and F.~Riemann.
+\newblock Dielectric breakdown of cell membranes.
+\newblock {\em Biophysical Journal}, (11):881 -- 899.
+
+\end{thebibliography}
