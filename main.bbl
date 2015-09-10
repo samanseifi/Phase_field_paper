@@ -22,16 +22,32 @@ Katherine~A. DeBruin and Wanda Krassowska.
   strength and rest potential.
 \newblock {\em Biophysical Journal}, 77(3):1213 -- 1224, 1999.
 
+\bibitem{derjaguin1981theory}
+BV~Derjaguin and AV~Prokhorov.
+\newblock On the theory of the rupture of black films.
+\newblock {\em Journal of Colloid and Interface Science}, 81(1):108--115, 1981.
+
 \bibitem{deryagin1962theory}
 BV~Deryagin and Yu~V Gutop.
 \newblock Theory of the breakdown (rupture) of free films.
 \newblock {\em Kolloidn. Zh}, 24:370--374, 1962.
+
+\bibitem{du2011phase}
+Qiang Du.
+\newblock Phase field calculus, curvature-dependent energies, and vesicle
+  membranes.
+\newblock {\em Philosophical Magazine}, 91(1):165--181, 2011.
 
 \bibitem{Du2004450}
 Qiang Du, Chun Liu, and Xiaoqiang Wang.
 \newblock A phase field approach in the numerical study of the elastic bending
   energy for vesicle membranes.
 \newblock {\em Journal of Computational Physics}, 198(2):450 -- 468, 2004.
+
+\bibitem{elliott2010surface}
+Charles~M Elliott and Bj{\"o}rn Stinner.
+\newblock A surface phase field model for two-phase biological membranes.
+\newblock {\em SIAM Journal on Applied Mathematics}, 70(8):2904--2928, 2010.
 
 \bibitem{PhysRevE.61.6632}
 R.~Folch, J.~Casademunt, and A.~Hern\'andez-Machado.
