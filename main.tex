@@ -181,11 +181,19 @@ The function $H(\phi)$ is the Heaviside or the step function. The smooth Heavisi
 \end{equation}
 The Allen-Cahn type dynamic formulation can be obtained from the energy functional in Equation \ref{eqn:func2}:
 \begin{align}
-		\frac{\partial\phi}{\partial t}&=-M\,\frac{\delta\Delta W_p}{\delta\phi}+\eta(\mathbf{x},t)\\
+		\frac{\partial\phi}{\partial t}&=-M\,\frac{\delta\Delta W_p}{\delta\phi}+\eta(\mathbf{x},t) \nonumber \\
 		&=-M\left(-\bar{\gamma}\,\varepsilon\,\nabla^2\phi+\frac{\bar{\gamma}}{\varepsilon}\,g'(\phi)  + \sigma\,\delta(\phi)\,c_0\right)+\eta(\mathbf{x},t)
+		\label{pf}
 \end{align}
 where $g'(\phi)=\frac{1}{2}\left(\phi-3\phi^2+2\phi^3\right)$ and also the Dirac's delta function $\delta(\phi)=dH(\phi)/d\phi$ is the derivative of Heaviside function. $M$ is related to the time scale for atomic rearrangement from the disordered phase to ordered one called the mobility coefficient where can be related to the diffusion coefficient $D$ and temperature $T$ by the Einstein relation $D=M\,k_B T$, and the coefficient $k_B$ is called is the Boltzman's constant, and $\eta(\mathbf{x},t)$ is the stochastic noise due to thermal fluctiuations and satisfies the relation $\langle\eta(\mathbf{x},t)\eta(\mathbf{x'},t)\rangle=2M\,k_B T\,\delta(\mathbf{x}-\mathbf{x'})\,\delta(t-t')$.
 \section{Numerical Results}
+We are applying the finite-difference scheme. The non-dimensionalized Equation \ref{pf} can be obtained in the following:
+\begin{equation}
+	\frac{\partial\phi}{\partial\tilde{t}}=\tilde{\gamma}\,\tilde{\varepsilon}\bar{\nabla}^2\phi-\frac{\tilde{\gamma}}{\tilde{\varepsilon}}
+\,g'(\phi)-\tilde{\sigma}\,\delta(\phi)\,c_0+\tilde{\eta}(\mathbf{\tilde{x}},\tilde{t})
+\end{equation}
+
+
 \newpage
 \appendix
 \section{Solution to Electric Field}
