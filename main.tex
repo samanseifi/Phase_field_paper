@@ -185,14 +185,32 @@ The Allen-Cahn type dynamic formulation can be obtained from the energy function
 		&=-M\left(-\bar{\gamma}\,\varepsilon\,\nabla^2\phi+\frac{\bar{\gamma}}{\varepsilon}\,g'(\phi)  + \sigma\,\delta(\phi)\,c_0\right)+\eta(\mathbf{x},t)
 		\label{pf}
 \end{align}
-where $g'(\phi)=\frac{1}{2}\left(\phi-3\phi^2+2\phi^3\right)$ and also the Dirac's delta function $\delta(\phi)=dH(\phi)/d\phi$ is the derivative of Heaviside function. $M$ is related to the time scale for atomic rearrangement from the disordered phase to ordered one called the mobility coefficient where can be related to the diffusion coefficient $D$ and temperature $T$ by the Einstein relation $D=M\,k_B T$, and the coefficient $k_B$ is called is the Boltzman's constant, and $\eta(\mathbf{x},t)$ is the stochastic noise due to thermal fluctiuations and satisfies the relation $\langle\eta(\mathbf{x},t)\eta(\mathbf{x'},t)\rangle=2M\,k_B T\,\delta(\mathbf{x}-\mathbf{x'})\,\delta(t-t')$.
-\section{Numerical Results}
-We are applying the finite-difference scheme. The non-dimensionalized Equation \ref{pf} can be obtained in the following:
+where $g'(\phi)=\frac{1}{2}\left(\phi-3\phi^2+2\phi^3\right)$ and also the Dirac's delta function $\delta(\phi)=dH(\phi)/d\phi$ is the derivative of Heaviside function. $M$ is related to the time scale for atomic rearrangement from the disordered phase to ordered one called the mobility coefficient where can be related to the diffusion coefficient $D$ and temperature $T$ by the Einstein relation $D=M\,k_B T$, and the coefficient $k_B=\unit[4.11\times10^{-12}]{J}$ is called is the Boltzman's constant, and $\eta(\mathbf{x},t)$ is the stochastic noise due to thermal fluctiuations and satisfies the relation:
 \begin{equation}
-	\frac{\partial\phi}{\partial\tilde{t}}=\tilde{\gamma}\,\tilde{\varepsilon}\bar{\nabla}^2\phi-\frac{\tilde{\gamma}}{\tilde{\varepsilon}}
-\,g'(\phi)-\tilde{\sigma}\,\delta(\phi)\,c_0+\tilde{\eta}(\mathbf{\tilde{x}},\tilde{t})
+\langle\eta(\mathbf{x},t)\ \eta(\mathbf{\bar{x}},\bar{t})\rangle=2M\,k_B T\,\delta(\mathbf{x}-\mathbf{\bar{x}})\,\delta(t-\bar{t})
 \end{equation}
-
+\section{Numerical Results}
+We introduce the following non-dimensional variables:
+\begin{equation*}
+\mathbf{x}'=\frac{\mathbf{x}}{l}, \quad t'=\frac{t}{\tau}
+\end{equation*}
+where $l$ is a characteristic length of the membrane and $\tau=l^2/D$ is the characteristic time associated with diffusion of the lipid molecules. Where $D$ is the diffusion coefficient of lipid membrane and $D=M\,k_B T$. Also the dimensionless surface and line tension can be acquired:
+\begin{equation*}
+\gamma'=\frac{\gamma\,l}{k_B T}, \quad \sigma'=\frac{\sigma\,l^2}{k_B T}
+\end{equation*}
+ The non-dimensionalized and discretized form of Equation \ref{pf} is going to be:
+\begin{equation}
+	\frac{\phi^{n+1}_{i,\ j}-\phi^{n}_{i,\ j}}{\Delta{t'}}={\gamma'}\,{\varepsilon'}\bar{\nabla}^2\phi^{n}_{i,\ j}-\frac{{\gamma}'}{\varepsilon'}
+\,g'(\phi^{n}_{i,\ j})-{\sigma}'\,\delta(\phi^{n}_{i,\ j})\,c_0+{\eta}'(\mathbf{{x'}},{t'})
+\end{equation}
+The form of discrete Laplacian operator $\bar{\nabla}^2$ is used where it introduced first by Oono and Puri:
+\begin{equation}
+\begin{split}
+\bar{\nabla}^2{\phi^{n}_{i,\ j}}=\frac{\phi_{i+1,\ j}+\phi_{i-1,\ j}+\phi_{i,\ j+1}+\phi_{i,\ j-1}}{2\,{\Delta x'}^{2}}\\
++\frac{\phi_{i+1,\ j+1}+\phi_{i-1,\ j+1}+\phi_{i+1,\ j-1}+\phi_{i-1,\ j-1}}{4\,{\Delta x'}^{2}}\\
+-\frac{3\,\phi_{i,\ j}}{{\Delta x'}^2}
+\end{split}
+\end{equation}
 
 \newpage
 \appendix
