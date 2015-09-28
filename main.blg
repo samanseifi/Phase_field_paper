@@ -5,45 +5,45 @@ The style file: plain.bst
 Database file #1: ref.bib
 Warning--there's a number but no volume in Zimmermann1974881
 Warning--empty year in Zimmermann1974881
-You've used 19 entries,
+You've used 10 entries,
             2118 wiz_defined-function locations,
-            644 strings with 7406 characters,
-and the built_in function-call counts, 6973 in all, are:
-= -- 682
-> -- 331
+            574 strings with 5848 characters,
+and the built_in function-call counts, 3735 in all, are:
+= -- 372
+> -- 169
 < -- 0
-+ -- 133
-- -- 110
-* -- 583
-:= -- 1172
-add.period$ -- 57
-call.type$ -- 19
-change.case$ -- 112
++ -- 67
+- -- 56
+* -- 314
+:= -- 624
+add.period$ -- 30
+call.type$ -- 10
+change.case$ -- 58
 chr.to.int$ -- 0
-cite$ -- 21
-duplicate$ -- 209
-empty$ -- 537
-format.name$ -- 110
-if$ -- 1418
+cite$ -- 12
+duplicate$ -- 110
+empty$ -- 290
+format.name$ -- 56
+if$ -- 757
 int.to.chr$ -- 0
-int.to.str$ -- 19
-missing$ -- 19
-newline$ -- 98
-num.names$ -- 38
-pop$ -- 77
+int.to.str$ -- 10
+missing$ -- 10
+newline$ -- 53
+num.names$ -- 20
+pop$ -- 41
 preamble$ -- 1
-purify$ -- 93
+purify$ -- 48
 quote$ -- 0
-skip$ -- 137
+skip$ -- 71
 stack$ -- 0
-substring$ -- 606
-swap$ -- 19
+substring$ -- 345
+swap$ -- 10
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 76
+type$ -- 40
 warning$ -- 2
-while$ -- 63
-width$ -- 21
-write$ -- 210
+while$ -- 36
+width$ -- 12
+write$ -- 111
 (There were 2 warnings)

@@ -1,21 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{Allen19791085}
-Samuel~M. Allen and John~W. Cahn.
-\newblock A microscopic theory for antiphase boundary motion and its
-  application to antiphase domain coarsening.
-\newblock {\em Acta Metallurgica}, 27(6):1085 -- 1095, 1979.
-
-\bibitem{Badalassi2003371}
-V.E. Badalassi, H.D. Ceniceros, and S.~Banerjee.
-\newblock Computation of multiphase systems with phase field models.
-\newblock {\em Journal of Computational Physics}, 190(2):371 -- 397, 2003.
-
-\bibitem{Cahn1971151}
-J.W Cahn and J.E Hilliard.
-\newblock Spinodal decomposition: A reprise.
-\newblock {\em Acta Metallurgica}, 19(2):151 -- 161, 1971.
-
 \bibitem{DeBruin19991213}
 Katherine~A. DeBruin and Wanda Krassowska.
 \newblock Modeling electroporation in a single cell. i. effects of field
@@ -38,28 +22,18 @@ Qiang Du.
   membranes.
 \newblock {\em Philosophical Magazine}, 91(1):165--181, 2011.
 
-\bibitem{Du2004450}
-Qiang Du, Chun Liu, and Xiaoqiang Wang.
-\newblock A phase field approach in the numerical study of the elastic bending
-  energy for vesicle membranes.
-\newblock {\em Journal of Computational Physics}, 198(2):450 -- 468, 2004.
-
 \bibitem{elliott2010surface}
 Charles~M Elliott and Bj{\"o}rn Stinner.
 \newblock A surface phase field model for two-phase biological membranes.
 \newblock {\em SIAM Journal on Applied Mathematics}, 70(8):2904--2928, 2010.
 
-\bibitem{PhysRevE.61.6632}
-R.~Folch, J.~Casademunt, and A.~Hern\'andez-Machado.
-\newblock Viscous fingering in liquid crystals: Anisotropy and morphological
-  transitions.
-\newblock {\em Phys. Rev. E}, 61:6632--6638, Jun 2000.
-
-\bibitem{PhysRevE.68.046310}
-A.~Hern\'andez-Machado, A.~M. Lacasta, E.~Mayoral, and E.~Corvera~Poir\'e.
-\newblock Phase-field model of hele-shaw flows in the high-viscosity contrast
-  regime.
-\newblock {\em Phys. Rev. E}, 68:046310, Oct 2003.
+\bibitem{glaser1988reversible}
+Ralf~W Glaser, Sergei~L Leikin, Leonid~V Chernomordik, Vasili~F Pastushenko,
+  and Artjom~I Sokirko.
+\newblock Reversible electrical breakdown of lipid bilayers: formation and
+  evolution of pores.
+\newblock {\em Biochimica et Biophysica Acta (BBA)-Biomembranes},
+  940(2):275--287, 1988.
 
 \bibitem{karatekin2003cascades}
 Erdem Karatekin, Olivier Sandre, Hicham Guitouni, Nicolas Borghi, Pierre-Henri
@@ -68,34 +42,11 @@ Erdem Karatekin, Olivier Sandre, Hicham Guitouni, Nicolas Borghi, Pierre-Henri
   transport.
 \newblock {\em Biophysical journal}, 84(3):1734--1749, 2003.
 
-\bibitem{PhysRevLett.87.045501}
-Alain Karma, David~A. Kessler, and Herbert Levine.
-\newblock Phase-field model of mode iii dynamic fracture.
-\newblock {\em Phys. Rev. Lett.}, 87:045501, Jul 2001.
-
-\bibitem{landau1950theory}
-LD~Landau and VL~Ginzburg.
-\newblock On the theory of superconductivity.
-\newblock {\em Journal of Experimental and Theoretical Physics (USSR)},
-  20:1064, 1950.
-
-\bibitem{lowengrub2009phase}
-John~S Lowengrub, Andreas R{\"a}tz, and Axel Voigt.
-\newblock Phase-field modeling of the dynamics of multicomponent vesicles:
-  Spinodal decomposition, coarsening, budding, and fission.
-\newblock {\em Physical Review E}, 79(3):031926, 2009.
-
 \bibitem{Sandre}
 Olivier Sandre, Laurent Moreaux, and Francoise Brochard-Wyart.
 \newblock Dynamics of transient pores in stretched vesicles.
 \newblock {\em Proceedings of the National Academy of Sciences of the United
   States of America}, 96(19):pp. 10591--10596, 1999.
-
-\bibitem{Steinbach1996135}
-I.~Steinbach, F.~Pezzolla, B.~Nestler, M.~Seebelberg, R.~Prieler, G.J. Schmitz,
-  and J.L.L. Rezende.
-\newblock A phase field concept for multiphase systems.
-\newblock {\em Physica D: Nonlinear Phenomena}, 94(3):135 -- 147, 1996.
 
 \bibitem{Weaver1996135}
 James~C. Weaver and Yu.A. Chizmadzhev.

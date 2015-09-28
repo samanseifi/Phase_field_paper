@@ -50,19 +50,33 @@ In this work, a model and simulation method to study the dynamics of pore format
 %-------------------------------------------------%
 
 Vesicles have biomedical applications as vectors for drug and gene delivery. Manufactured vesicles can be injected with drug molecules, or other particles such as DNA, which can in theory be delivered directly to a particular region.
-    The dynamic behavior of lipid bilayer vesicles in an external flow is clearly part of the overall theory of potential drug delivery application.
-However, this only accounts for half of the story; an ability to release the interior
-of the drug in a controlled environment is crucial for any application. 
-     One possible appraoch is electroporation. A vesicle or lipid membrane under an electric field forms pores on the surface due to surface tension produced by the electric field. Controlled applications of electric pulses can induce the formation of a pore, which closes once the pulse is turned off.
-     Many theories describing the electroporation process have surfaced in recent (and not so recent) years \citep{Weaver1996135,Zimmermann1974881,DeBruin19991213} however, the underlying physical process remains elusive.
-     
-The foundation for the pore dynamics simulation in this work is the phase-field model. This model stems from work done by \citep{landau1950theory,Cahn1971151} and \citep{Allen19791085} beginning in the 1950s and has been applied to study a variety of physical phenomena. It has been applied to solidification dynamics, microstructure evolution and phase transition but it has also been applied to other situations such as viscous fingering \citep{PhysRevE.61.6632,PhysRevE.68.046310}, fracture dynamics,\cite{PhysRevLett.87.045501} multi-phase flow \cite{Steinbach1996135,Badalassi2003371}, vesicle dynamics \cite{Du2004450,elliott2010surface,lowengrub2009phase}, etc.
+%    The dynamic behaviour of lipid bilayer vesicles in an external flow is clearly part of the overall theory of potential drug delivery application.
+%However, this only accounts for half of the story; 
+An ability to release the interior of the drug in a controlled environment is crucial for any application. One possible approach is so called "electroporation". Under the action of high potential difference across the biological membrane, they lose their barriers functions (electric breakdown). It is generally accepted now that electric breakdown is based on the formation of pores in the lipid areas of the membrane. It is also accepted that due to extra surface tension produced by potential difference cause the formation of these pores.
+ 
+In this paper the diffusive interface approach (phase-field) is adopted in order to simulate the electroporation of a simple model system based on planar lipid bilayers. It is believed the study of planar system paves the way to study more complex systems such as lipid vesicles and biological cells.
+%      
+%The foundation for the pore dynamics simulation in this work is the phase-field model. This model stems from work done by \citep{landau1950theory,Cahn1971151} and \citep{Allen19791085} beginning in the 1950s and has been applied to study a variety of physical phenomena. It has been applied to solidification dynamics, microstructure evolution and phase transition but it has also been applied to other situations such as viscous fingering \citep{PhysRevE.61.6632,PhysRevE.68.046310}, fracture dynamics,\cite{PhysRevLett.87.045501} multi-phase flow \cite{Steinbach1996135,Badalassi2003371}, vesicle dynamics \cite{Du2004450,elliott2010surface,lowengrub2009phase}, etc.
+
 
 \section{Theoretical Background}
 \subsection{Transient Pores Model}
-The initial observation of pores on membranes did not involve the electrical behaviour. The possibility of spontaneous poration initially suggested by two groups and later on studied more carefully  \citep{Sandre, karatekin2003cascades}. The mechanism of pore formation/annihilation is described by two competitive deriving force: the energy per length along the pore edges $\gamma$, we call it line tension, and the membrane tension or the energy per area of the membrane of a flat pore-free membrane $\gamma$ where it is simply called the surface tension. The energy of transient pore $\Delta W_{p}$ is then defined as follow:
+The initial observation of pores on membranes did not involve the electrical behaviour. The possibility of spontaneous poration initially suggested by two groups and later on studied more carefully  \citep{karatekin2003cascades, Sandre}. The assumption is that during the constant thermal fluctuation of lipid molecules hydrophobic pores are spontaneously formed in the lipid matrix (Figure \ref{fig:pores}a). Exceeding to the critical radius, a reorientation of lipids occur and converts the pore into hydrophilic pores (Figure \ref{fig:pores}b) with the head groups forming the pore walls. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{pics/pores.pdf}
+	\caption{Types of pores in lipid membrane}
+	\label{fig:pores}
+\end{figure}
+The life time of the hydrophobic pores is in the order of the lipid fluctuations. Therefore, it is assumed that they are only intermediate stages in the formation of hydrophilic pores which are more stable and larger in size \citep{glaser1988reversible}. In this paper the intermediate stage of hydrophobic pores is neglected.
+
+The mechanism of hydrophilic pores formation/annihilation is described by two competitive deriving force: the energy per length along the pore edges $\gamma$, we call it line tension, and the membrane tension or the energy per area of the membrane of a flat pore-free membrane $\sigma_0$ where it is simply called the surface tension. The energy of transient pore $\Delta W_{p}$ is usually given for a single pore with radius of $R$:
 \begin{equation}
-	\Delta W_{p} = \oint\gamma\,ds - \int\sigma_0\,dA
+	\Delta W_{p}(R)=2\,\pi\,\gamma\,R-\sigma_0\,\pi\,R^2
+\end{equation}
+One can simply generalize this for pore region instead of one pore and rewrite the free energy equation in the form of two integrals. The first integral is the interracial contribution due to line tension $\gamma$ acting on the pore edges $\partial\Gamma$, and the second integral is the surface tension contribution to the porated area $\Gamma_p$ of the lipid membrane:
+\begin{equation}
+	\Delta W_{p} = \oint_{\partial\Gamma}\gamma\,ds - \int_{\Gamma_p}\sigma_0\,dA
 	\label{eqn:transientmodel}
 \end{equation}
 %\begin{figure}[H]
@@ -75,7 +89,7 @@ Surface tension $\sigma_0$ is responsible for appearance of transient pores in v
 
 
 \subsection{Electroporation Model}
-Electroporation is a dynamic phenomenon that depends on the local transmembrane voltage $U_{m}$ of the lipid membrane. The induced voltage over the lipid membrane creates an extra surface tension $\sigma_{e}$ over the membrane in addition to the membrane tension $\sigma_0$ that already exists on the membrane. The overall surface tension then is $\sigma=\sigma_0+\sigma_e$ .
+Many theories describing the electroporation process have surfaced in recent (and not so recent) years \citep{Weaver1996135,Zimmermann1974881,DeBruin19991213}. Electroporation is a dynamic phenomenon that depends on the local transmembrane voltage $U_{m}$ of the lipid part of the membrane. The induced voltage over the lipid membrane creates an extra surface tension $\sigma_{e}$ over the membrane in addition to the membrane tension $\sigma_0$ that already exists on the membrane. The overall surface tension then is $\sigma=\sigma_0+\sigma_e$ .
 %There are two separate models to describe electroporation. The first model focuses in reproducing the temporal process of creation and evolution of pores, but the spatial distributions of the transmembrane voltage over the surface membrane, pore density, and other quantities are ignored. The second model solves the boundary value problem to calculate the spatial distribution of the transmembrane potential $U_m$. Models in this
 %group compute the transmembrane potential assuming an intact membrane and use the magnitude of $U_m$ to assess the extend of electroporation.
 
@@ -189,7 +203,7 @@ where $g'(\phi)=\frac{1}{2}\left(\phi-3\phi^2+2\phi^3\right)$ and also the Dirac
 \begin{equation}
 \langle\eta(\mathbf{x},t)\ \eta(\mathbf{\bar{x}},\bar{t})\rangle=2M\,k_B T\,\delta(\mathbf{x}-\mathbf{\bar{x}})\,\delta(t-\bar{t})
 \end{equation}
-\section{Numerical Results}
+\section{Numerical Method}
 We introduce the following non-dimensional variables:
 \begin{equation*}
 \mathbf{x}'=\frac{\mathbf{x}}{l}, \quad t'=\frac{t}{\tau}
@@ -211,7 +225,7 @@ The form of discrete Laplacian operator $\bar{\nabla}^2$ is used where it introd
 -\frac{3\,\phi_{i,\ j}}{{\Delta x'}^2}
 \end{split}
 \end{equation}
-
+Take the lipid molecules the line tension $\gamma$ is reported to be between $\unit[10]{pN}$ to $\unit[30]{pN}$. We choose the characteristic length $l$ to be $k_B T/\gamma$. This gives 
 \newpage
 \appendix
 \section{Solution to Electric Field}
