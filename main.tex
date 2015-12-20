@@ -21,11 +21,13 @@
 \usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
 \definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
 \definecolor{mylilas}{RGB}{170,55,241}
+\usepackage{pgfplots}
 \makeatletter
 \usepackage{babel}
 \RequirePackage[noblocks]{authblk}
 \RequirePackage{natbib}
 \RequirePackage{amssymb}
+
 \begin{document}
 
 
@@ -68,6 +70,12 @@ The initial observation of pores on membranes did not involve the electrical beh
 	\caption{Types of pores in lipid membrane}
 	\label{fig:pores}
 \end{figure}
+%\begin{tikzpicture}
+%\begin{axis}
+%\addplot3[surf]
+%table {data.dat};
+%\end{axis}
+%\end{tikzpicture}
 The life time of the hydrophobic pores is in the order of the lipid fluctuations. Therefore, it is assumed that they are only intermediate stages in the formation of hydrophilic pores which are more stable and larger in size \citep{glaser1988reversible}. In this paper the intermediate stage of hydrophobic pores is neglected.
 
 The mechanism of hydrophilic pores formation/annihilation is described by two competitive deriving force: the energy per length along the pore edges $\gamma$, we call it line tension, and the membrane tension or the energy per area of the membrane of a flat pore-free membrane $\sigma_0$ where it is simply called the surface tension. The energy of transient pore $\Delta W_{p}$ is usually given for a single pore with radius of $R$:
@@ -109,21 +117,42 @@ In the presence of a transmembrane electric field, the free energy of pore forma
 \end{equation}
 The last term is an additional surface tension due to electric potential induced over the membrane surface. Electric surface tension defined as \cite{Weaver1996135}:
 \begin{equation}
-	\sigma_e=\frac{1}{2}\,C_{LW}\,\bar{U}^{2}
+	\sigma_e=\frac{1}{2}\,C_{LW}\,\bar{U}_{m}^{2}
 	\label{eqn:elecsurface}
 \end{equation}
- Here $\bar{U}$ is the spatially averaged transmembrane voltage, 
+ Here $\bar{U}_{m}$ is the spatially averaged transmembrane voltage, 
+%\begin{equation}
+%\bar{U}=\frac{U_m\,A_m+U_p\,A_p}{A_m+A_p}\approx U_m\frac{A_m}{A}
+%\end{equation}
+%where the membrane voltage $U_m$ is the voltage across lipids and $U_p\approx0$ is the voltage across conductive pores. The area consists of lipid molecules is $A_m$ and the area filled with pores is $A_p$ where the total area of the lipid membrane is $A=A_m+A_p$. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.75]{pics/model0.pdf}
+	\caption{A lipid membrane placed in a uniform electric field.}
+\end{figure}
+The membrane voltage $U_m$ can be obtained from solving electric field equation of the system:
 \begin{equation}
-\bar{U}=\frac{U_m\,A_m+U_p\,A_p}{A_m+A_p}\approx U_m\frac{A_m}{A}
+	\nabla^{2}\Phi^{\pm}=0
 \end{equation}
-where the membrane voltage $U_m$ is the voltage across lipids and $U_p\approx0$ is the voltage across conductive pores. The area consists of lipid molecules is $A_m$ and the area filled with pores is $A_p$ where the total area of the lipid membrane is $A=A_m+A_p$. The membrane voltage $U_m$ can be obtained from:
+where $\mathbf{E}^{\pm}=-\nabla\Phi^{\pm}$ is the electric field. At the electrodes, the potential satisfies the boundary conditions $\Phi(x,y,\pm L,t)=\mp U_0/2$, conservation of normal currents requires
 \begin{equation}
-	U_m = U_0\,\left(1-\exp({-t/\tau_m}) \right)
+	C_m\,\frac{d\bar{U}_m}{dt}+G_m\bar{U}_{m} +I_{p}=\lambda^{\pm}\mathbf{n}\cdot\mathbf{E}^{\pm}
 \end{equation}
-the time scale $\tau_m$ is defined as follow:
+where $U_m(t)=\Phi^{+}(x,y,0,t)-\Phi^{-}(x,y,0,t)$ is the membrane voltage and $\mathbf{n}$ is the unit normal vector. $G_m$ is the conductance of the lipid membrane and $I_p$ is the current density of pore regions:
 \begin{equation}
-	\tau_m=C_m\,L\,\frac{(\lambda^{-} + \lambda^{+})}{(\lambda^{+}\,\lambda^{-})}
+I_p=\frac{\bar{U}_m}{R_{p}}
+\label{Um}
 \end{equation}
+where $R_p=h/\lambda A_p$ is the pore resistance with $A_p$ being the area of the pore region and $\lambda$ is the conductivity of the solution filling the pore and $h$ is the thickness of the membrane.
+
+At $t=0$, when the field is applied, the potential is assumed to be continuous, $\bar{U}_m(t=0)=0$. These system of equation can be solved numerically.
+%\begin{equation}
+%	U_m = U_0\,\left(1-\exp({-t/\tau_m}) \right)
+%\end{equation}
+%the time scale $\tau_m$ is defined as follow:
+%\begin{equation}
+%	\tau_m=C_m\,L\,\frac{(\lambda^{-} + \lambda^{+})}{(\lambda^{+}\,\lambda^{-})}
+%\end{equation}
 where $\lambda^{\pm}$ is the interior and exterior electrolyte (i.e. water) conductivity. This solution is the result of solving the electric field system of equation and the leaky dielectric assumption applied on the lipid membrane. Details are given in Appendix A.
 
 The change of the pore's specific capacitance as water displaces lipid to form a pore is simply 
@@ -145,7 +174,7 @@ We are adopting the first order phase transition model. This model implies that 
 %where $H$ is the mean curvature, $C_0$ is called the spontaneous curvature, $\kappa$ is the bending rigidity, $\bar{\kappa}$ is the Gaussian bending rigidity, $\sigma$ is the surface tension and $\gamma$ is the line tension.
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.55]{pics/model1_2.pdf}
+	\includegraphics[scale=0.5]{pics/model1_2.pdf}
 	\caption{\footnotesize{Schematic of the whole domain $\Gamma = \Gamma_m \cup \partial\Gamma \cup \Gamma_p$. $\Gamma_m$ indicates lipid membrane phase, $\Gamma_p$ is the pore phase, and $\partial\Gamma$ is the interface }}
 	\label{fig:model1}
 \end{figure}
