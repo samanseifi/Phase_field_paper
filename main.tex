@@ -31,12 +31,12 @@
 \begin{document}
 
 
-\title{Diffuse Interface Model of Electroporation}
+\title{Phase-Field Model of Electroporation}
 
 \author{Saman Seifi}
-\affil{Mechanical Engineering, Boston University, Boston, MA 02120, USA}
+\affil{\footnotesize\textit{Department of Mechanical Engineering, Boston University, Boston, MA 02215, USA}}
 \author{David Salac}
-\affil{Mechanical Engineering, University at Buffalo-SUNY, Buffalo, NY 14228, USA}
+\affil{\footnotesize\textit{Department of Aerospace and Mechanical Engineering, University at Buffalo-SUNY, Buffalo, NY 14228, USA}}
 
 \date{}
 
@@ -97,7 +97,11 @@ Surface tension $\sigma_0$ is responsible for appearance of transient pores in v
 
 
 \subsection{Electroporation Model}
-Many theories describing the electroporation process have surfaced in recent (and not so recent) years \citep{Weaver1996135,Zimmermann1974881,DeBruin19991213}. Electroporation is a dynamic phenomenon that depends on the local transmembrane voltage $U_{m}$ of the lipid part of the membrane. The induced voltage over the lipid membrane creates an extra surface tension $\sigma_{e}$ over the membrane in addition to the membrane tension $\sigma_0$ that already exists on the membrane. The overall surface tension then is $\sigma=\sigma_0+\sigma_e$ .
+Many theories describing the electroporation process have surfaced in recent (and not so recent) years \citep{Weaver1996135,Zimmermann1974881,DeBruin19991213}. Electroporation is a dynamic phenomenon that depends on the local transmembrane voltage $U_{m}$ of the lipid part of the membrane. The induced voltage over the lipid membrane creates an extra surface tension $\sigma_{e}$ over the membrane in addition to the membrane tension $\sigma_0$ that already exists on the membrane. The overall surface tension then is:
+\begin{equation}
+\sigma=\sigma_0+\sigma_e
+\end{equation}
+
 %There are two separate models to describe electroporation. The first model focuses in reproducing the temporal process of creation and evolution of pores, but the spatial distributions of the transmembrane voltage over the surface membrane, pore density, and other quantities are ignored. The second model solves the boundary value problem to calculate the spatial distribution of the transmembrane potential $U_m$. Models in this
 %group compute the transmembrane potential assuming an intact membrane and use the magnitude of $U_m$ to assess the extend of electroporation.
 
@@ -153,7 +157,7 @@ At $t=0$, when the field is applied, the potential is assumed to be continuous, 
 %\begin{equation}
 %	\tau_m=C_m\,L\,\frac{(\lambda^{-} + \lambda^{+})}{(\lambda^{+}\,\lambda^{-})}
 %\end{equation}
-where $\lambda^{\pm}$ is the interior and exterior electrolyte (i.e. water) conductivity. This solution is the result of solving the electric field system of equation and the leaky dielectric assumption applied on the lipid membrane. Details are given in Appendix A.
+where $\lambda^{\pm}$ is the interior and exterior electrolyte (i.e. water) conductivity. This solution is the result of solving the electric field system of equation and the leaky dielectric assumption applied on the lipid membrane.
 
 The change of the pore's specific capacitance as water displaces lipid to form a pore is simply 
 \begin{equation}
@@ -162,7 +166,7 @@ C_{LW}=\left(\frac{\epsilon_w}{\epsilon_m}-1\right)\,C_m
 Here $\epsilon_w=K_w\,\epsilon_0$ is the permittivity of water and $\epsilon_m=K_m\,\epsilon_0$ is the permittivity of lipid membrane, and $C_m$ is the constant capacitance per area of a pore free membrane, i.e $C_m=\epsilon_m/h$ where $h$ is the thickness of the membrane. Typically $K_w=80$ and $K_m=2$, so when the potential $\bar{U}$ increases $\Delta W$ decreases which means pore nucleation is more desirable.
 
 %-------------------------------------------------%
-\section{Diffuse Interface Model}
+\section{Phase-field Formulation}
 %-------------------------------------------------%
 We are adopting the first order phase transition model. This model implies that broken membrane states (pore phase) have lower free energy than intact membrane states (lipid phase). This concept first introduced on the study of stability of soap films \cite{deryagin1962theory, derjaguin1981theory}. This approach assumes at the presence of electric field the membrane breakdown occurs because it is energetically more desirable i.e. transitioning to more stable phase.
 %\subsection{Sharp Interface Model}
@@ -225,26 +229,26 @@ The function $H(\phi)$ is the Heaviside or the step function. The smooth Heavisi
 The Allen-Cahn type dynamic formulation can be obtained from the energy functional in Equation \ref{eqn:func2}:
 \begin{align}
 		\frac{\partial\phi}{\partial t}&=-M\,\frac{\delta\Delta W_p}{\delta\phi}+\eta(\mathbf{x},t) \nonumber \\
-		&=-M\left(-\bar{\gamma}\,\varepsilon\,\nabla^2\phi+\frac{\bar{\gamma}}{\varepsilon}\,g'(\phi)  + \sigma\,\delta(\phi)\,c_0\right)+\eta(\mathbf{x},t)
+		&=-M\left(-\bar{\gamma}\,\varepsilon\,\nabla^2\phi+\frac{\bar{\gamma}}{\varepsilon}\,\frac{dg}{d\phi}  + \sigma\,\delta(\phi)\,c_0\right)+\eta(\mathbf{x},t)
 		\label{pf}
 \end{align}
-where $g'(\phi)=\frac{1}{2}\left(\phi-3\phi^2+2\phi^3\right)$ and also the Dirac's delta function $\delta(\phi)=dH(\phi)/d\phi$ is the derivative of Heaviside function. $M$ is related to the time scale for atomic rearrangement from the disordered phase to ordered one called the mobility coefficient where can be related to the diffusion coefficient $D$ and temperature $T$ by the Einstein relation $D=M\,k_B T$, and the coefficient $k_B=\unit[4.11\times10^{-12}]{J}$ is called is the Boltzman's constant, and $\eta(\mathbf{x},t)$ is the stochastic noise due to thermal fluctiuations and satisfies the relation:
+where $g'(\phi)=\frac{1}{2}\left(\phi-3\phi^2+2\phi^3\right)$ and also the Dirac's delta function $\delta(\phi)=dH(\phi)/d\phi$ is the derivative of Heaviside function. $M$ is related to the time scale for atomic rearrangement from the disordered phase to ordered one called the mobility coefficient where can be related to the diffusion coefficient $D$ and temperature $T$ by the Einstein relation $D=M\,k_B T$, and the coefficient $k_B=\unit[4.11\times10^{-12}]{J}$ is called is the Boltzmann's constant, and $\eta(\mathbf{x},t)$ is the stochastic noise due to thermal fluctuations and satisfies the relation:
 \begin{equation}
 \langle\eta(\mathbf{x},t)\ \eta(\mathbf{\bar{x}},\bar{t})\rangle=2M\,k_B T\,\delta(\mathbf{x}-\mathbf{\bar{x}})\,\delta(t-\bar{t})
 \end{equation}
 \section{Numerical Method}
 We introduce the following non-dimensional variables:
 \begin{equation*}
-\mathbf{x}'=\frac{\mathbf{x}}{l}, \quad t'=\frac{t}{\tau}
+\mathbf{x}'=\frac{\mathbf{x}}{l_c}, \quad t'=\frac{t}{\tau}
 \end{equation*}
-where $l$ is a characteristic length of the membrane and $\tau=l^2/D$ is the characteristic time associated with diffusion of the lipid molecules. Where $D$ is the diffusion coefficient of lipid membrane and $D=M\,k_B T$. Also the dimensionless surface and line tension can be acquired:
+where $l_c$ is a characteristic length of the membrane and $\tau=l_c^2/D$ is the characteristic time associated with diffusion of the lipid molecules. Where $D$ is the diffusion coefficient of lipid membrane and $D=M\,k_B T$. Also the dimensionless surface and line tension can be acquired:
 \begin{equation*}
-\gamma'=\frac{\gamma\,l}{k_B T}, \quad \sigma'=\frac{\sigma\,l^2}{k_B T}
+\gamma'=\frac{\gamma\,l_c}{k_B T}, \quad \sigma'=\frac{\sigma\,l_c^2}{k_B T}
 \end{equation*}
  The non-dimensionalized and discretized form of Equation \ref{pf} is going to be:
 \begin{equation}
 	\frac{\phi^{n+1}_{i,\ j}-\phi^{n}_{i,\ j}}{\Delta{t'}}={\gamma'}\,{\varepsilon'}\bar{\nabla}^2\phi^{n}_{i,\ j}-\frac{{\gamma}'}{\varepsilon'}
-\,g'(\phi^{n}_{i,\ j})-{\sigma}'\,\delta(\phi^{n}_{i,\ j})\,c_0+{\eta}'(\mathbf{{x'}},{t'})
+\,(\phi^{n}_{i,\ j})-{\sigma}'\,\delta(\phi^{n}_{i,\ j})\,c_0+{\eta}'(\mathbf{{x'}},{t'})
 \end{equation}
 The form of discrete Laplacian operator $\bar{\nabla}^2$ is used where it introduced first by Oono and Puri:
 \begin{equation}
@@ -254,10 +258,38 @@ The form of discrete Laplacian operator $\bar{\nabla}^2$ is used where it introd
 -\frac{3\,\phi_{i,\ j}}{{\Delta x'}^2}
 \end{split}
 \end{equation}
-Take the lipid molecules the line tension $\gamma$ is reported to be between $\unit[10]{pN}$ to $\unit[30]{pN}$. We choose the characteristic length $l$ to be $k_B T/\gamma$. This gives 
-\newpage
-\appendix
-\section{Solution to Electric Field}
+Take the lipid molecules the line tension $\gamma$ is reported to be between $\unit[10]{pN}$ to $\unit[30]{pN}$. We choose the characteristic length $l_c=k_B T/\gamma$. This gives $l_c=6.4111\times 10^{-11}\ \text{m}$.
+\section{Results}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1.0]{pics/Vm.pdf}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{pics/10000.pdf}
+        \caption{$t=10000\,\Delta t'$}
+        \label{fig:first}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{pics/15000.pdf}
+        \caption{$t=15000\,\Delta t'$}
+        \label{fig:second}
+    \end{subfigure}
+    
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{pics/20000.pdf}
+        \caption{$t=20000\,\Delta t'$}
+        \label{fig:third}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{pics/24000.pdf}
+        \caption{$t=25000\,\Delta t'$}
+        \label{fig:finish}
+    \end{subfigure}
+    \caption{Initiation of the pore and evolution during time ($U_0=1.0$ v)}\label{fig:orderparameters}
+\end{figure}
 
 \newpage
 \bibliographystyle{plain}
